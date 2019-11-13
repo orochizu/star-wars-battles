@@ -1,5 +1,15 @@
 import React from 'react';
 
-const Layout: React.FC = () => <div>Layout</div>;
+import styled from '@emotion/styled';
+
+import Container from '@material-ui/core/Container';
+
+const LayoutContainer = styled(Container)`
+    padding: 1rem;
+`;
+
+const Layout: React.FC = ({ children }) => (
+    <LayoutContainer maxWidth="lg">{children}</LayoutContainer>
+);
 
 export default Layout;
