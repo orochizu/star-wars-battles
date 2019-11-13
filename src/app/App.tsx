@@ -1,14 +1,26 @@
 import React from 'react';
-import { WithTranslation, withTranslation } from 'react-i18next';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-const App: React.FC<AppProps> = ({ t }) => {
-  return (
-    <div className="App">
-      <h1>{t('APP_TITLE')}</h1>
-    </div>
-  );
+import SelectResourceView from '../views/SelectResourceView';
+import NotFoundView from '../views/NotFoundView';
+import GameView from '../views/GameView';
+
+const App: React.FC = () => {
+    return (
+        <BrowserRouter>
+            <Switch>
+                <Route exact path="/">
+                    <SelectResourceView />
+                </Route>
+                <Route path="/:resource(mass|crew)">
+                    <GameView />
+                </Route>
+                <Route path="*">
+                    <NotFoundView />
+                </Route>
+            </Switch>
+        </BrowserRouter>
+    );
 };
 
-export type AppProps = WithTranslation;
-
-export default withTranslation()(App);
+export default App;
