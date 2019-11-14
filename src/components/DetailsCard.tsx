@@ -11,19 +11,20 @@ import {
     withTheme,
 } from '@material-ui/core';
 
-const DetailsCardContainer = styled(Card)`
-    min-height: 21rem;
-    min-width: 13rem;
-`;
-
 const DetailsCardMedia = styled(CardMedia)`
     opacity: 0.8;
     height: 610px;
 
-    @media (min-width: ${({ theme }: any) => theme.breakpoints.values['sm']}) {
+    @media (max-width: ${({ theme }: any) =>
+            theme.breakpoints.values['md']}px) {
         height: 305px;
-
         background-size: 50%;
+    }
+
+    @media (max-width: ${({ theme }: any) =>
+            theme.breakpoints.values['sm']}px) {
+        height: 202.5px;
+        background-size: 25%;
     }
 `;
 
@@ -32,7 +33,7 @@ const DetailsCard: React.FC<DetailsCardProps> = ({
     variant,
 }: DetailsCardProps) => (
     <Box height={1} width={1}>
-        <DetailsCardContainer>
+        <Card>
             <CardHeader
                 title={title}
                 titleTypographyProps={{ align: 'center' }}
@@ -43,7 +44,7 @@ const DetailsCard: React.FC<DetailsCardProps> = ({
                     : '../empire.svg')}
             />
             <CardContent></CardContent>
-        </DetailsCardContainer>
+        </Card>
     </Box>
 );
 
