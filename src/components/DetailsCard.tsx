@@ -8,6 +8,7 @@ import {
     CardContent,
     CardHeader,
     CardMedia,
+    WithTheme,
 } from '@material-ui/core';
 
 const DetailsCardContainer = styled(Card)`
@@ -16,7 +17,6 @@ const DetailsCardContainer = styled(Card)`
 `;
 
 const DetailsCardMedia = styled(CardMedia)`
-    height: 600px;
     opacity: 0.8;
 `;
 
