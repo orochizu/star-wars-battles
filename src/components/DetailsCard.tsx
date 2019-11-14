@@ -8,7 +8,7 @@ import {
     CardContent,
     CardHeader,
     CardMedia,
-    WithTheme,
+    withTheme,
 } from '@material-ui/core';
 
 const DetailsCardContainer = styled(Card)`
@@ -18,6 +18,13 @@ const DetailsCardContainer = styled(Card)`
 
 const DetailsCardMedia = styled(CardMedia)`
     opacity: 0.8;
+    height: 610px;
+
+    @media (min-width: ${({ theme }: any) => theme.breakpoints.values['sm']}) {
+        height: 305px;
+
+        background-size: 50%;
+    }
 `;
 
 const DetailsCard: React.FC<DetailsCardProps> = ({
@@ -48,4 +55,4 @@ interface DetailsCardInterface {
 type Side = 'empire' | 'resistance';
 type DetailsCardProps = DetailsCardInterface;
 
-export default DetailsCard;
+export default withTheme(DetailsCard);

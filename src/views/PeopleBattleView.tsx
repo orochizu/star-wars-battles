@@ -1,22 +1,27 @@
 import React from 'react';
+import { Grid, Typography } from '@material-ui/core';
 
 import { useTranslation } from 'react-i18next';
 
-import { Grid, Typography } from '@material-ui/core';
+import usePeople from '../hooks/usePeople';
 
 import Link from '../components/Link';
 import Layout from '../components/Layout';
 import DetailsCard from '../components/DetailsCard';
 
-const SelectResourceView: React.FC = () => {
+const PeopleBattleView: React.FC = () => {
     const { t } = useTranslation();
+
+    const [people, loading, error] = usePeople();
+
+    console.log(people, loading, error);
 
     return (
         <Layout>
             <Grid container spacing={6}>
                 <Grid item xs={12}>
                     <Typography align="center" variant="h2">
-                        {t('CHOSE_CHAMP_TYPE_VIEW_HEADER')}
+                        {t('GAME_VIEW_HEADER')}
                     </Typography>
                 </Grid>
             </Grid>
@@ -32,7 +37,7 @@ const SelectResourceView: React.FC = () => {
                 <Grid item lg={6} md={6} xs={12}>
                     <Link to="/starships">
                         <DetailsCard
-                            title={t('CHOOSE_STARSHIPS_TITLE')}
+                            title={t('CHOOSE_SHIPS_TITLE')}
                             variant="empire"
                         />
                     </Link>
@@ -42,4 +47,4 @@ const SelectResourceView: React.FC = () => {
     );
 };
 
-export default SelectResourceView;
+export default PeopleBattleView;

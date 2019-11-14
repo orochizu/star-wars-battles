@@ -7,8 +7,9 @@ import { ThemeProvider as EmotionProvider } from 'emotion-theming';
 import theme from '../theme';
 
 import SelectResourceView from '../views/SelectResourceView';
+import StarshipsBattleView from '../views/StarshipsBattleView';
+import PeopleBattleView from '../views/PeopleBattleView';
 import NotFoundView from '../views/NotFoundView';
-import GameView from '../views/GameView';
 
 const App: React.FC = () => {
     return (
@@ -19,8 +20,11 @@ const App: React.FC = () => {
                         <Route exact path="/">
                             <SelectResourceView />
                         </Route>
-                        <Route path="/:resource(mass|crew)">
-                            <GameView />
+                        <Route path="/starships">
+                            <StarshipsBattleView />
+                        </Route>
+                        <Route path="/people">
+                            <PeopleBattleView />
                         </Route>
                         <Route path="*">
                             <NotFoundView />
