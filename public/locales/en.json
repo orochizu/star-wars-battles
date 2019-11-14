@@ -1,3 +1,10 @@
 {
-  "APP_TITLE": "Star Wars: Battles"
+    "APP_TITLE": "Star Wars: Battles",
+    "PEOPLE_BATTLE_VIEW_HEADER": "Star Wars: Hero Battles",
+    "SHIPS_BATTLE_VIEW_HEADER": "Star Wars: Starship Battles",
+    "SELECT_GAME_VIEW_HEADER": "Select if you want to play as a hero or a starship",
+    "SELECT_PEOPLE_TITLE": "Hero",
+    "SELECT_SHIPS_TITLE": "Starship",
+    "SWITCH_LANGUAGE": "Switch language",
+    "LOADING": "Loading..."
 }

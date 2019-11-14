@@ -19,10 +19,10 @@ const StarshipsBattleView: React.FC = () => {
 
     return (
         <Layout>
-            <Grid container spacing={6}>
+            <Grid container spacing={6} justify="center">
                 <Grid item xs={12}>
                     <Typography align="center" variant="h3">
-                        {t('GAME_VIEW_HEADER')}
+                        {t('SHIPS_BATTLE_VIEW_HEADER')}
                     </Typography>
                 </Grid>
             </Grid>
@@ -30,7 +30,7 @@ const StarshipsBattleView: React.FC = () => {
                 <Grid item xs={6}>
                     <Link to="/people">
                         <DetailsCard
-                            title={t('CHOOSE_PEOPLE_TITLE')}
+                            title={t('SELECT_PEOPLE_TITLE')}
                             variant="resistance"
                         />
                     </Link>
@@ -38,7 +38,7 @@ const StarshipsBattleView: React.FC = () => {
                 <Grid item xs={6}>
                     <Link to="/starships">
                         <DetailsCard
-                            title={t('CHOOSE_SHIPS_TITLE')}
+                            title={t('SELECT_SHIPS_TITLE')}
                             variant="empire"
                         />
                     </Link>

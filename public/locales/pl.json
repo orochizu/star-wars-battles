@@ -1,3 +1,10 @@
 {
-  "APP_TITLE": "Gwiezdne Wojny: Potyczki"
+    "APP_TITLE": "Gwiezdne Wojny: Potyczki",
+    "PEOPLE_BATTLE_VIEW_HEADER": "Gwiezdne Wojny: Potyczki Bohaterów",
+    "SHIPS_BATTLE_VIEW_HEADER": "Gwiezdne Wojny: Potyczki Statków",
+    "SELECT_GAME_VIEW_HEADER": "Wybierz czy chcesz grać jako bohater czy jako statek",
+    "SELECT_PEOPLE_TITLE": "Bohater",
+    "SELECT_SHIPS_TITLE": "Statek",
+    "SWITCH_LANGUAGE": "Zmień język",
+    "LOADING": "Wczytywanie..."
 }

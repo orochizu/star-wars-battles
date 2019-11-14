@@ -13,10 +13,10 @@ const SelectResourceView: React.FC = () => {
 
     return (
         <Layout>
-            <Grid container spacing={6}>
+            <Grid container spacing={6} justify="center">
                 <Grid item xs={12}>
                     <Typography align="center" variant="h3">
-                        {t('CHOSE_CHAMP_TYPE_VIEW_HEADER')}
+                        {t('SELECT_GAME_VIEW_HEADER')}
                     </Typography>
                 </Grid>
             </Grid>
@@ -24,7 +24,7 @@ const SelectResourceView: React.FC = () => {
                 <Grid item xs={6}>
                     <Link to="/people">
                         <DetailsCard
-                            title={t('CHOOSE_PEOPLE_TITLE')}
+                            title={t('SELECT_PEOPLE_TITLE')}
                             variant="resistance"
                         />
                     </Link>
@@ -32,7 +32,7 @@ const SelectResourceView: React.FC = () => {
                 <Grid item xs={6}>
                     <Link to="/starships">
                         <DetailsCard
-                            title={t('CHOOSE_STARSHIPS_TITLE')}
+                            title={t('SELECT_SHIPS_TITLE')}
                             variant="empire"
                         />
                     </Link>

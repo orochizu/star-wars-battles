@@ -18,13 +18,11 @@ const DetailsCardMedia = styled(CardMedia)`
     @media (max-width: ${({ theme }: any) =>
             theme.breakpoints.values['md']}px) {
         height: 305px;
-        background-size: 50%;
     }
 
     @media (max-width: ${({ theme }: any) =>
             theme.breakpoints.values['sm']}px) {
         height: 202.5px;
-        background-size: 25%;
     }
 `;
 
