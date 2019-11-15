@@ -10,6 +10,7 @@ import selectRandomCards from '../utils/selectRandomCards';
 
 import Layout from '../components/Layout';
 import GameBoard from '../components/GameBoard';
+import FixedFax from '../components/FixedFab';
 
 const StarshipsBattleView: React.FC = () => {
     const { t } = useTranslation();
@@ -58,17 +59,9 @@ const StarshipsBattleView: React.FC = () => {
                     cardTwo={cards.cardTwo}
                 />
             </Grid>
-            <Grid container spacing={6} justify="center">
-                <Grid item xs="auto">
-                    <Fab
-                        variant="extended"
-                        disabled={loading}
-                        onClick={playRound}
-                    >
-                        {t('PLAY_ROUND')}
-                    </Fab>
-                </Grid>
-            </Grid>
+            <FixedFax variant="extended" disabled={loading} onClick={playRound}>
+                {t('PLAY_ROUND')}
+            </FixedFax>
         </Layout>
     );
 };

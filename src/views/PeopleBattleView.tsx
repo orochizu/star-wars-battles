@@ -9,6 +9,7 @@ import Layout from '../components/Layout';
 import GameBoard from '../components/GameBoard';
 import selectRandomCards from '../utils/selectRandomCards';
 import { Card, Person, RoundStatus } from '../types';
+import FixedFax from '../components/FixedFab';
 
 const PeopleBattleView: React.FC = () => {
     const { t } = useTranslation();
@@ -56,17 +57,9 @@ const PeopleBattleView: React.FC = () => {
                     cardTwo={cards.cardTwo}
                 />
             </Grid>
-            <Grid container spacing={6} justify="center">
-                <Grid item xs="auto">
-                    <Fab
-                        variant="extended"
-                        disabled={loading}
-                        onClick={playRound}
-                    >
-                        {t('PLAY_ROUND')}
-                    </Fab>
-                </Grid>
-            </Grid>
+            <FixedFax variant="extended" disabled={loading} onClick={playRound}>
+                {t('PLAY_ROUND')}
+            </FixedFax>
         </Layout>
     );
 };
