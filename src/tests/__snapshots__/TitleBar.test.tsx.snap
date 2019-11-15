@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TitleBar.tsx should match snapshot 1`] = `
+<ForwardRef(WithStyles)
+  position="static"
+>
+  <ForwardRef(WithStyles)>
+    <ForwardRef(WithStyles)
+      container={true}
+      justify="flex-start"
+    >
+      <ForwardRef(WithStyles)
+        item={true}
+        xs="auto"
+      >
+        <ForwardRef(render)
+          to="/"
+        >
+          <ForwardRef(WithStyles)
+            align="center"
+          >
+            APP_TITLE
+          </ForwardRef(WithStyles)>
+        </ForwardRef(render)>
+      </ForwardRef(WithStyles)>
+    </ForwardRef(WithStyles)>
+    <ForwardRef(WithStyles)
+      container={true}
+      justify="flex-end"
+    >
+      <ForwardRef(WithStyles)
+        item={true}
+      >
+        <ForwardRef(WithStyles)
+          control={
+            <ForwardRef(WithStyles)
+              checked={true}
+              onChange={[Function]}
+            />
+          }
+          label="SWITCH_LANGUAGE"
+          labelPlacement="start"
+        />
+      </ForwardRef(WithStyles)>
+    </ForwardRef(WithStyles)>
+  </ForwardRef(WithStyles)>
+</ForwardRef(WithStyles)>
+`;

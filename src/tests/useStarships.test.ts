@@ -1,8 +1,8 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import usePeople from './usePeople';
 import { Starship, StarshipsResult } from '../types';
-import useStarships from './useStarships';
+
+import useStarships from '../hooks/useStarships';
 
 const mockedShips: Starship[] = [
     {

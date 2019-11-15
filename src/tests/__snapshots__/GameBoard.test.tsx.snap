@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GameBoard.tsx should match snapshot 1`] = `
+<React.Fragment>
+  <React.Fragment>
+    <ForwardRef(WithStyles)
+      item={true}
+      xs={6}
+    >
+      <ForwardRef(WithTheme)
+        title="NO_CARD_SELECTED"
+        variant="resistance"
+      >
+        <ForwardRef(WithStyles)
+          container={true}
+          justify="center"
+        >
+          <ForwardRef(WithStyles)
+            item={true}
+            xs="auto"
+          >
+            <ForwardRef(WithStyles)
+              variant="h4"
+            >
+              0
+            </ForwardRef(WithStyles)>
+          </ForwardRef(WithStyles)>
+        </ForwardRef(WithStyles)>
+      </ForwardRef(WithTheme)>
+    </ForwardRef(WithStyles)>
+    <ForwardRef(WithStyles)
+      item={true}
+      xs={6}
+    >
+      <ForwardRef(WithTheme)
+        title="NO_CARD_SELECTED"
+        variant="empire"
+      >
+        <ForwardRef(WithStyles)
+          container={true}
+          justify="center"
+        >
+          <ForwardRef(WithStyles)
+            item={true}
+            xs="auto"
+          >
+            <ForwardRef(WithStyles)
+              variant="h4"
+            >
+              0
+            </ForwardRef(WithStyles)>
+          </ForwardRef(WithStyles)>
+        </ForwardRef(WithStyles)>
+      </ForwardRef(WithTheme)>
+    </ForwardRef(WithStyles)>
+  </React.Fragment>
+</React.Fragment>
+`;

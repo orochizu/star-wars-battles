@@ -1,7 +1,8 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import { PeopleResult, Person } from '../types';
-import usePeople from './usePeople';
+
+import usePeople from '../hooks/usePeople';
 
 const mockedPeople: Person[] = [
     {

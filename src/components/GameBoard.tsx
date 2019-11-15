@@ -34,6 +34,8 @@ const GameBoard: React.FC<GameBoardProps> = ({
                 ? playerTwoPoints + 1
                 : playerTwoPoints,
         ]);
+        // There is no need to run effect when points are changed
+        // eslint-disable-next-line
     }, [cardOne, cardTwo]);
 
     return (

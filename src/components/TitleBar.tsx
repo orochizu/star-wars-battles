@@ -19,7 +19,6 @@ const TitleBar: React.FC = () => {
 
     const toggleLanguage = useCallback(
         (value: boolean) => {
-            console.log(value);
             setIsEnglish(value);
             i18n.changeLanguage(isEnglish ? 'pl' : 'en');
         },
