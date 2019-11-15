@@ -37,7 +37,7 @@ const useStarships = (): [Starship[], boolean, string | null] => {
         const signal = controller.signal;
 
         getAllStarships(setStarships, signal)
-            .then(() => setLoading(false))
+            .finally(() => setLoading(false))
             .catch(error => setError(error));
 
         return (): void => controller.abort();

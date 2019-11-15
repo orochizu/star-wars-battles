@@ -17,8 +17,8 @@ const StarshipsBattleView: React.FC = () => {
     const [starships, loading] = useStarships();
 
     const [cards, setCards] = useState<{
-        cardOne: Card | undefined;
-        cardTwo: Card | undefined;
+        cardOne: Card;
+        cardTwo: Card;
     }>({ cardOne: undefined, cardTwo: undefined });
 
     const playRound = useCallback(() => {

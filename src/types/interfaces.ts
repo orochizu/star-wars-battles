@@ -2,7 +2,7 @@ import { RoundStatus } from './enums';
 
 export interface Person {
     name: string;
-    mass: string;
+    mass: number | string;
 }
 
 export interface PeopleResult {
@@ -12,7 +12,7 @@ export interface PeopleResult {
 
 export interface Starship {
     name: string;
-    crew: string;
+    crew: number | string;
 }
 
 export interface StarshipsResult {

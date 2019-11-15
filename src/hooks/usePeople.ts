@@ -27,17 +27,17 @@ const getAllPeople = async (
     setPeople(people);
 };
 
-const usePeople = (): [Person[], boolean, string | null] => {
+const usePeople = (): [Person[], boolean, string] => {
     const [people, setPeople] = useState<Person[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] = useState<string | null>(null);
+    const [error, setError] = useState<string>(null);
 
     useEffect(() => {
         const controller = new AbortController();
         const signal = controller.signal;
 
         getAllPeople(setPeople, signal)
-            .then(() => setLoading(false))
+            .finally(() => setLoading(false))
             .catch(error => setError(error));
 
         return (): void => controller.abort();
