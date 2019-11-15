@@ -13,7 +13,7 @@ i18n.use(Backend)
         },
         lng: 'en',
         fallbackLng: 'en',
-        debug: true,
+        debug: false,
 
         interpolation: {
             escapeValue: false,
