@@ -1,20 +1,44 @@
-import React from 'react';
-import { CircularProgress, Grid, Typography } from '@material-ui/core';
+import React, { useCallback, useState } from 'react';
+import { Fab, Grid, Typography } from '@material-ui/core';
 
 import { useTranslation } from 'react-i18next';
 
 import usePeople from '../hooks/usePeople';
 
-import Link from '../components/Link';
 import Layout from '../components/Layout';
-import DetailsCard from '../components/DetailsCard';
+import GameBoard from '../components/GameBoard';
+import selectRandomCards from '../utils/selectRandomCards';
+import { Card, Person, RoundStatus } from '../types';
 
 const PeopleBattleView: React.FC = () => {
     const { t } = useTranslation();
+    const [people, loading] = usePeople();
 
-    const [people, loading, error] = usePeople();
+    const [cards, setCards] = useState<{
+        cardOne: Card | undefined;
+        cardTwo: Card | undefined;
+    }>({ cardOne: undefined, cardTwo: undefined });
 
-    console.log(people, loading, error);
+    const playRound = useCallback(() => {
+        const [personOne, personTwo] = selectRandomCards<Person>(people);
+
+        setCards({
+            cardOne: {
+                title: personOne.name,
+                status:
+                    personOne.mass < personTwo.mass
+                        ? RoundStatus.LOSE
+                        : RoundStatus.WIN,
+            },
+            cardTwo: {
+                title: personTwo.name,
+                status:
+                    personTwo.mass < personOne.mass
+                        ? RoundStatus.LOSE
+                        : RoundStatus.WIN,
+            },
+        });
+    }, [people]);
 
     return (
         <Layout>
@@ -26,37 +50,22 @@ const PeopleBattleView: React.FC = () => {
                 </Grid>
             </Grid>
             <Grid container spacing={6} justify="center">
-                {loading ? (
-                    <>
-                        <Grid item xs="auto">
-                            <CircularProgress size={60} />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <Typography align="center">
-                                {t('LOADING')}
-                            </Typography>
-                        </Grid>
-                    </>
-                ) : (
-                    <>
-                        <Grid item xs={6}>
-                            <Link to="/people">
-                                <DetailsCard
-                                    title={t('CHOOSE_PEOPLE_TITLE')}
-                                    variant="resistance"
-                                />
-                            </Link>
-                        </Grid>
-                        <Grid item xs={6}>
-                            <Link to="/starships">
-                                <DetailsCard
-                                    title={t('CHOOSE_SHIPS_TITLE')}
-                                    variant="empire"
-                                />
-                            </Link>
-                        </Grid>
-                    </>
-                )}
+                <GameBoard
+                    loading={loading}
+                    cardOne={cards.cardOne}
+                    cardTwo={cards.cardTwo}
+                />
+            </Grid>
+            <Grid container spacing={6} justify="center">
+                <Grid item xs="auto">
+                    <Fab
+                        variant="extended"
+                        disabled={loading}
+                        onClick={playRound}
+                    >
+                        {t('PLAY_ROUND')}
+                    </Fab>
+                </Grid>
             </Grid>
         </Layout>
     );

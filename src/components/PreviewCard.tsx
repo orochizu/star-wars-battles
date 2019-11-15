@@ -14,6 +14,7 @@ import {
 const DetailsCardMedia = styled(CardMedia)`
     opacity: 0.8;
     height: 610px;
+    background-size: 85%;
 
     @media (max-width: ${({ theme }: any) =>
             theme.breakpoints.values['md']}px) {
@@ -26,9 +27,10 @@ const DetailsCardMedia = styled(CardMedia)`
     }
 `;
 
-const DetailsCard: React.FC<DetailsCardProps> = ({
+const PreviewCard: React.FC<DetailsCardProps> = ({
     title,
     variant,
+    children,
 }: DetailsCardProps) => (
     <Box height={1} width={1}>
         <Card>
@@ -41,17 +43,15 @@ const DetailsCard: React.FC<DetailsCardProps> = ({
                     ? '../resistance.svg'
                     : '../empire.svg')}
             />
-            <CardContent></CardContent>
+            <CardContent>{children}</CardContent>
         </Card>
     </Box>
 );
 
-interface DetailsCardInterface {
+interface DetailsCardProps {
     title?: string;
-    variant: Side;
+    variant: 'empire' | 'resistance';
+    children?: React.ReactNode;
 }
 
-type Side = 'empire' | 'resistance';
-type DetailsCardProps = DetailsCardInterface;
-
-export default withTheme(DetailsCard);
+export default withTheme(PreviewCard);

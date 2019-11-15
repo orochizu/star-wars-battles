@@ -1,10 +1,12 @@
 {
-    "APP_TITLE": "Gwiezdne Wojny: Potyczki",
-    "PEOPLE_BATTLE_VIEW_HEADER": "Gwiezdne Wojny: Potyczki Bohaterów",
-    "SHIPS_BATTLE_VIEW_HEADER": "Gwiezdne Wojny: Potyczki Statków",
-    "SELECT_GAME_VIEW_HEADER": "Wybierz czy chcesz grać jako bohater czy jako statek",
-    "SELECT_PEOPLE_TITLE": "Bohater",
-    "SELECT_SHIPS_TITLE": "Statek",
-    "SWITCH_LANGUAGE": "Zmień język",
-    "LOADING": "Wczytywanie..."
+  "APP_TITLE": "Gwiezdne Wojny: Potyczki",
+  "LOADING": "Wczytywanie...",
+  "NO_CARD_SELECTED": "Nie wybrano karty",
+  "PEOPLE_BATTLE_VIEW_HEADER": "Gwiezdne Wojny: Potyczki Bohaterów",
+  "PLAY_ROUND": "ROZEGRAJ RUNDE",
+  "SELECT_GAME_VIEW_HEADER": "Wybierz czy chcesz grać jako bohater czy jako statek",
+  "SELECT_PEOPLE_TITLE": "Bohater",
+  "SELECT_SHIPS_TITLE": "Statek",
+  "SHIPS_BATTLE_VIEW_HEADER": "Gwiezdne Wojny: Potyczki Statków",
+  "SWITCH_LANGUAGE": "Zmień język"
 }

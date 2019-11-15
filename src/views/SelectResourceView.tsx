@@ -6,7 +6,7 @@ import { Grid, Typography } from '@material-ui/core';
 
 import Link from '../components/Link';
 import Layout from '../components/Layout';
-import DetailsCard from '../components/DetailsCard';
+import PreviewCard from '../components/PreviewCard';
 
 const SelectResourceView: React.FC = () => {
     const { t } = useTranslation();
@@ -23,7 +23,7 @@ const SelectResourceView: React.FC = () => {
             <Grid container spacing={6}>
                 <Grid item xs={6}>
                     <Link to="/people">
-                        <DetailsCard
+                        <PreviewCard
                             title={t('SELECT_PEOPLE_TITLE')}
                             variant="resistance"
                         />
@@ -31,7 +31,7 @@ const SelectResourceView: React.FC = () => {
                 </Grid>
                 <Grid item xs={6}>
                     <Link to="/starships">
-                        <DetailsCard
+                        <PreviewCard
                             title={t('SELECT_SHIPS_TITLE')}
                             variant="empire"
                         />

@@ -1,21 +1,46 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
-import { Grid, Typography } from '@material-ui/core';
+import { Fab, Grid, Typography } from '@material-ui/core';
 
 import useStarships from '../hooks/useStarships';
+import { Card, RoundStatus, Starship } from '../types';
+import selectRandomCards from '../utils/selectRandomCards';
 
-import Link from '../components/Link';
 import Layout from '../components/Layout';
-import DetailsCard from '../components/DetailsCard';
+import GameBoard from '../components/GameBoard';
 
 const StarshipsBattleView: React.FC = () => {
     const { t } = useTranslation();
 
-    const [starships, loading, error] = useStarships();
+    const [starships, loading] = useStarships();
 
-    console.log(starships, loading, error);
+    const [cards, setCards] = useState<{
+        cardOne: Card | undefined;
+        cardTwo: Card | undefined;
+    }>({ cardOne: undefined, cardTwo: undefined });
+
+    const playRound = useCallback(() => {
+        const [shipOne, shipTwo] = selectRandomCards<Starship>(starships);
+
+        setCards({
+            cardOne: {
+                title: shipOne.name,
+                status:
+                    shipOne.crew < shipTwo.crew || shipOne.crew === 'unknown'
+                        ? RoundStatus.LOSE
+                        : RoundStatus.WIN,
+            },
+            cardTwo: {
+                title: shipTwo.name,
+                status:
+                    shipTwo.crew < shipOne.crew || shipTwo.crew === 'unknown'
+                        ? RoundStatus.LOSE
+                        : RoundStatus.WIN,
+            },
+        });
+    }, [starships]);
 
     return (
         <Layout>
@@ -26,22 +51,22 @@ const StarshipsBattleView: React.FC = () => {
                     </Typography>
                 </Grid>
             </Grid>
-            <Grid container spacing={6}>
-                <Grid item xs={6}>
-                    <Link to="/people">
-                        <DetailsCard
-                            title={t('SELECT_PEOPLE_TITLE')}
-                            variant="resistance"
-                        />
-                    </Link>
-                </Grid>
-                <Grid item xs={6}>
-                    <Link to="/starships">
-                        <DetailsCard
-                            title={t('SELECT_SHIPS_TITLE')}
-                            variant="empire"
-                        />
-                    </Link>
+            <Grid container spacing={6} justify="center">
+                <GameBoard
+                    loading={loading}
+                    cardOne={cards.cardOne}
+                    cardTwo={cards.cardTwo}
+                />
+            </Grid>
+            <Grid container spacing={6} justify="center">
+                <Grid item xs="auto">
+                    <Fab
+                        variant="extended"
+                        disabled={loading}
+                        onClick={playRound}
+                    >
+                        {t('PLAY_ROUND')}
+                    </Fab>
                 </Grid>
             </Grid>
         </Layout>
